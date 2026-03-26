@@ -8,4 +8,6 @@ gpg --armor --export-secret-keys 59F9C4BDC3B7F215 # exporta la llave privada usa
 gpg --armor --export pametoapanta.502@gmail.com > mi_llave_publica.asc # exporta la llave publica en un archivo
 gpg --import joss_llave_publica.asc #importa una llave pública
 gpg --list-keys # verificar el import de otra llave pública
+echo "Hola Joss, mensaje top secret" > doc_no_cifrado.txt #creación del documento no cifrado
 cat doc_no_cifrado.txt # muestra si el documento fue creado correctamente
+gpg --output doc_cifrado.txt --encrypt --recipient jolagunapu@uide.edu.ec doc_no_cifrado.txt # sirve para cifrar el documento anterior no cifrado
