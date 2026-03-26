@@ -11,3 +11,4 @@ gpg --list-keys # verificar el import de otra llave pública
 echo "Hola Joss, mensaje top secret" > doc_no_cifrado.txt #creación del documento no cifrado
 cat doc_no_cifrado.txt # muestra si el documento fue creado correctamente
 gpg --output doc_cifrado.txt --encrypt --recipient jolagunapu@uide.edu.ec doc_no_cifrado.txt # sirve para cifrar el documento anterior no cifrado
+gpg --decrypt joss_cifrado.txt # descrifra el mensaje enviado por joss
