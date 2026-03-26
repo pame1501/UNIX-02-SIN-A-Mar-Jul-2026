@@ -7,3 +7,4 @@ gpg --list-secret-keys --keyid-format=long # sirve para listar la llave privada 
 gpg --armor --export-secret-keys 59F9C4BDC3B7F215 # exporta la llave privada usando el hash después de / en sec
 gpg --armor --export pametoapanta.502@gmail.com > mi_llave_publica.asc # exporta la llave publica en un archivo
 gpg --import joss_llave_publica.asc #importa una llave pública
+gpg --list-keys # verificar el import de otra llave pública
