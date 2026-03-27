@@ -10,4 +10,7 @@ gcc saludo.c -o saludobin # crea un archivo en lenguaje c y luego este se transf
 sudo mv saludobin /bin/ # mueve el archivo a /bin para poder ejecutarlo desde cualquier parte de la terminal
 # el inodo almacdena metadatos, el nombre del archivo NO se guarda en el inodo
 #pwd es print working directory
-ls -F # es para listar archivos
+ls -F # es para listar archivos 
+/ #directorio
+* #archivo
+@ #enlace simbolico
