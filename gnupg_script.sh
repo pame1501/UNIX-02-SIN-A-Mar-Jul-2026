@@ -21,3 +21,4 @@ gpg --verify MICOMPA_doc_no_cifrado_firmado.txt #Verify the digital signature of
 gpg --output doc_no_cifrado_firmado_binario.txt --sign doc_no_cifrado.txt #Sign the document in binary format using the signature in the file
 gpg --verify JOSS_doc_no_cifrado_firmado_binario.txt #Verify partner's binary signed document
 gpg --output firma_separada_doc_no_cifrado.sig --detach-sign doc_no_cifrado.txt #Sign document with detached signature in separate file
+gpg --verify MICOMPA_firma_separada_doc_no_cifrado.sig MICOMPA_doc_no_cifrado.txt #Verify the partner's document using a detached signature file
