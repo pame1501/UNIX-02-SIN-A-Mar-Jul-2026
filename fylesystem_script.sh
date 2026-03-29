@@ -1,21 +1,21 @@
-cd /dev #change directory to /dev directory
-ls #list files and directories on the /dev directory
-history # carga lista los comandos realizados
+cd /dev # Change directory to the /dev directory
+ls # List files and directories in the /dev directory
+history # Display a list of previously entered commands
 cd /proc # Real-time system and process information, directly from the terminal.
-cat cpuinfo #Display detailed information about the processor (CPU).
-#en /media se encuentra las particiones de montaje
-bin/ #encontramos archivos bonarios
-var #datos variables como archivos de BDD
-gcc saludo.c -o saludobin # crea un archivo en lenguaje c y luego este se transforma a lenguaje binario, el -o es output para darle nombre al archivo
-sudo mv saludobin /bin/ # mueve el archivo a /bin para poder ejecutarlo desde cualquier parte de la terminal
-# el inodo almacdena metadatos, el nombre del archivo NO se guarda en el inodo
-#pwd es print working directory
-ls -F # es para listar archivos 
-/ #directorio
-* #archivo
-@ #enlace simbolico
-ls -i #muestra los inodos
-hard link # se toma el mismo inodo para crear una especie de archivo de respaldo miestras se encuentre dentro de el mismo espacio, pero si se borra el original el enlace se rompre
-# puntero la variable apunta a la dirección
-#sbin es del superusuario
-#el kernel de linux está en el directorio /
+cat cpuinfo # Display detailed information about the processor (CPU).
+#The mount points are located in /media
+bin/ #contains binary files
+var #variable data such as database files
+gcc greeting.c -o greetingbin #creates a file in C and then converts it to binary; the -o stands for output to name the file
+sudo mv saludobin /bin/ # moves the file to /bin so it can be executed from anywhere in the terminal
+# the inode stores metadata; the file name is NOT stored in the inode
+# pwd stands for print working directory
+ls -F # lists files
+/ # directory
+* #file
+@ #symbolic link
+ls -i #shows the inodes
+hard link # uses the same inode to create a sort of backup file as long as it remains within the same space, but if the original is deleted, the link breaks
+# pointer: the variable points to the address
+#sbin is for the superuser
+#the Linux kernel is in the / directory
