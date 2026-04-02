@@ -16,3 +16,7 @@ sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e "\n---\n"
 sudo parted -l# displays the disk layout and its total size, the partition table type, and a list of partitions with their start and end points and file systems
 # * -e ensures that 'echo' is executed as a string and not as a command (always true; it is not evaluated)
 lsblk -f # It displays a tree structure of your partitions and includes the following: FSTYPE: The file system format of each partition; UUID: The unique identifier of the partition; MOUNTPOINT: The exact folder where each disk is mounted.
+# loop 4 It's like a hard drive, so that certain files are treated as storage space.
+[ -d /sys/firmaware/efi ] && echo "UEFI" || echo "BIOS" # This command evaluates to true or false using the logical operators && and ||
+# && and checks if A is true, then B is true, and prints “true”
+#|| or It checks if A is true; if so, it prints true, but if A is false, it prints B
