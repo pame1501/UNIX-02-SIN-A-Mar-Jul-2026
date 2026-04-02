@@ -20,3 +20,18 @@ lsblk -f # It displays a tree structure of your partitions and includes the foll
 [ -d /sys/firmaware/efi ] && echo "UEFI" || echo "BIOS" # This command evaluates to true or false using the logical operators && and ||
 # && and checks if A is true, then B is true, and prints “true”
 #|| or It checks if A is true; if so, it prints true, but if A is false, it prints B
+#2) BOOTLOADER:
+# Grub2: is the standard used to load Linux into RAM
+cat /etc/defalult/drub # is used to configure GRUB and is compiled with 'upgrade-grub'
+#3) KERNEL:
+# - Hardware detected
+# - initramfs is the same as initrd
+boot/ # files required to boot the operating system
+lost+found/ # Recovered files
+srv/ # Web server data
+media/ # Where USB drives and CDs are automatically mounted
+mnt/ # Manual temporary mounts
+opt/ # Manually installed software
+/run # Temporary files for currently running processes
+#socket is a means of communication between programs
+/tmp # It stores temporary files; these are located in RAM, so they are deleted when the program is restarted
