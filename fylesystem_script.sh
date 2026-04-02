@@ -12,7 +12,7 @@ sudo mv saludobin /bin/ # mueve el archivo a /bin para poder ejecutarlo desde cu
 #pwd es print working directory
 ls -F # es para listar archivos 
 / #directorio
-* #archivo
+* #archivo ejecutable
 @ #enlace simbolico
 ls -i #muestra los inodos
 hard link # se toma el mismo inodo para crear una especie de archivo de respaldo miestras se encuentre dentro de el mismo espacio, pero si se borra el original el enlace se rompre
