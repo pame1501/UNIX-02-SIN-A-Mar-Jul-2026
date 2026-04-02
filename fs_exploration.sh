@@ -35,3 +35,9 @@ opt/ # Manually installed software
 /run # Temporary files for currently running processes
 #socket is a means of communication between programs
 /tmp # It stores temporary files; these are located in RAM, so they are deleted when the program is restarted
+file system # generates a block of files to avoid reading bit by bit and instead read in blocks
+inode # is the file's unique identifier (like an ID number)
+#Linux file systems
+#ext4 uses inodes and blocks
+#XFS optimizes large files
+stat filename # is used to check the blocks, how many there are, and the block size
