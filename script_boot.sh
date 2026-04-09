@@ -10,3 +10,8 @@ mkdir #mkdir is used to create a directory
 echo $HOME #Moves to the HOME directory
 echo $BASH #We use this to move to the bin directory, where the binary executables are located
 echo $PATH #Shows us all the possible directories we can navigate to
+ls -lai # list files and folders
+man ls # shows me the command options
+ls --all # shows me all we have the directory, the hard links (the . and .. directories) that are present in every directory
+. directory # “.” refers to the current directory
+.. # is a relative link that points to the parent directory of the directory you are currently in.
