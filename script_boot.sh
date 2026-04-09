@@ -23,3 +23,7 @@ total 8 # displays the number of blocks
 stat . # we move to the . directory.
 device: 7,4 # the major identifies a driver type; if it's 0, it indicates the use of a virtual machine; a number other than 0 indicates the use of a physical disk.
 Device: 7,4     Inode: 1572971     Links: 2 # The minor, the number following , indicates the partition unit
+whoami # who am I
+ls -lt # when each file was modified
+ ls /etc |head -20 # displays the first 20 files in the /etc directory
+ ls /dev |tail -20 # displays the last 20 files in the /dev directory
