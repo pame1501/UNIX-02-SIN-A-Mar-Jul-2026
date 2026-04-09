@@ -20,3 +20,6 @@ total 8 # displays the number of blocks
 1572971 drwxrwxrwx+ 2 codespace codespace 4096 Apr  9 12:19 . # el número(2) me indica la cantidad de archivos duros apuntando a su inodo
 1572874 drwxrwxrwx+ 5 codespace root      4096 Apr  9 12:19 ..
 #                     user      +   file size + date of creation
+stat . # we move to the . directory.
+device: 7,4 # the major identifies a driver type; if it's 0, it indicates the use of a virtual machine; a number other than 0 indicates the use of a physical disk.
+Device: 7,4     Inode: 1572971     Links: 2 # The minor, the number following , indicates the partition unit
