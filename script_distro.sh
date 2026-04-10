@@ -1,7 +1,12 @@
-sudo apt update
-sudpo apt upgrade
-sudo apt install -y git vim make gcc libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 # instalación de librerías
-git clone --depth 1 https://github.com/torvalds/linux.git # clona git
-cd linux # nos movemos a la carpeta de linux
-make menuconfig # se selecciona condifuración de 64 bits
-make -j 2 # se ponen 2 cores para que trabaje compilando el kernel
+sudo apt upgrade
+sudo apt install -y git vim make gcc libncurses-dev flex bison bc cpio libelf-dev libssl-dev syslinux dosfstools qemu-system-x86 # install libraries
+git clone --depth 1 https://github.com/torvalds/linux.git # clone git
+cd linux # move to the linux folder
+make menuconfig # select the 64-bit configuration
+make -j 2 # assign 2 cores to work on compiling the kernel
+Kernel: arch/x86/boot/bzImage is ready  (#1) # means that compilation is complete
+sudo mkdir /boot-files # create a new folder
+sudo cp arch/x86/boot/bzImage /boot-files/ # This command copies the Linux kernel you just compiled to the folder you created earlier.
+cd .. # You are moving up one level in your system's directory tree.
+git clone --depth 1 https://git.busybox.net/busybox # You are downloading the source code for BusyBox, an essential tool for creating minimal Linux systems.
+
