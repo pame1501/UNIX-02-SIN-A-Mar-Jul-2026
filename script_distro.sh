@@ -24,3 +24,4 @@ sudo rm linuxrc #Delete the symbolic link (or file) named linuxrc that BusyBox c
 sudo chmod +x init # Execution permissions are granted to the init file that was created.
 sudo find . | cpio -o -H newc > ../init.cpio #converting the entire folder and file structure into a single file that the Linux kernel can load into RAM during bootup.
 sudo su # change to root
+dd if=/dev/zero of=boot bs=1M count=50 #Create an empty 50 MB file that will serve as a virtual disk
