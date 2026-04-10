@@ -15,4 +15,8 @@ make -j 2 #compila
 # Change config_TC=y to config_TC=n and wait for the final result Link to: m resolv
 sudo mkdir /boot-files/initramfs #Install it in the initramfs directory
 sudo make CONFIG_PREFIX=/boot-files/initramfs install # You are installing BusyBox within a specific folder structure that will serve as your initial file system.
-
+cd /boot-files/initramfs # initramfs install
+#The initramfs is the initial filesystem that the kernel loads into memory at boot time.
+sudo vi init #Create the `init` file, which is the first program the kernel runs
+#!/bin/sh # tells the kernel to use the shell to interpret the file.
+/bin/sh #starts an interactive shell.
