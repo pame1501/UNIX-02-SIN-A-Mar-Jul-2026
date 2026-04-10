@@ -22,3 +22,5 @@ sudo vi init #Create the `init` file, which is the first program the kernel runs
 /bin/sh #starts an interactive shell.
 sudo rm linuxrc #Delete the symbolic link (or file) named linuxrc that BusyBox creates by default in the root of your installation directory.
 sudo chmod +x init # Execution permissions are granted to the init file that was created.
+sudo find . | cpio -o -H newc > ../init.cpio #converting the entire folder and file structure into a single file that the Linux kernel can load into RAM during bootup.
+sudo su # change to root
