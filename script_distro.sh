@@ -13,4 +13,5 @@ cd busybox # move busybox folfer
 make menuconfig # Important change: Go to Settings → Build Options and enable “Build static binary (no shared libs)”by pressing the spacebar. This prevents external library dependencies
 make -j 2 #compila 
 # Change config_TC=y to config_TC=n and wait for the final result Link to: m resolv
+sudo mkdir /boot-files/initramfs #Install it in the initramfs directory
 
