@@ -11,4 +11,6 @@ cd .. # You are moving up one level in your system's directory tree.
 git clone --depth 1 https://git.busybox.net/busybox # You are downloading the source code for BusyBox, an essential tool for creating minimal Linux systems.
 cd busybox # move busybox folfer
 make menuconfig # Important change: Go to Settings → Build Options and enable “Build static binary (no shared libs)”by pressing the spacebar. This prevents external library dependencies
-make -j 2 
+make -j 2 #compila 
+# Change config_TC=y to config_TC=n and wait for the final result Link to: m resolv
+
