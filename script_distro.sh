@@ -20,3 +20,5 @@ cd /boot-files/initramfs # initramfs install
 sudo vi init #Create the `init` file, which is the first program the kernel runs
 #!/bin/sh # tells the kernel to use the shell to interpret the file.
 /bin/sh #starts an interactive shell.
+sudo rm linuxrc #Delete the symbolic link (or file) named linuxrc that BusyBox creates by default in the root of your installation directory.
+sudo chmod +x init # Execution permissions are granted to the init file that was created.
