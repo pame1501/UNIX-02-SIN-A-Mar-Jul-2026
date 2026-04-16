@@ -22,3 +22,7 @@ chmod +x script.sh   # Adds execute permissions to everyone because no user is s
 chmod u+x script.sh  # Adds execute permissions to the user
 chmod o-r secret.txt # Removes read permissions from others
 chmod u+rw, go-rwx private # Adds read and write permissions to the user, and removes read, write, and execute permissions from others
+sudo chmod +x init # Contains the first process to be executed in the OS
+sudo echo “Hello” > /etc/protected_file # Sudo doesn't work because it only acts on the command immediately following it
+echo “Hello” | sudo tee /etc/protected_file > /dev/null # echo goes to standard output; using | tee gives me the standard output, which in this case is the terminal, and I redirect it to /dev/null
+echo "Hola" | sudo tee /etc/archivo_protegido # displays the file's contents directly in the terminal and creates the file
