@@ -6,4 +6,8 @@ mkdir -- -rf # Used to create a directory named -rf
 rmdir -- -rf # Used to remove a directory
 ls --help # Shorter or summary help
 man ls # Displays the full manual
-n to navigate forward and N to navigate backward
+n to navigate forward and N to navigate backward, para buscar usamos /la palabra a encontrar
+depth = Create a shallow clone with a history truncated to the specified number of commits.
+           Implies --single-branch unless --no-single-branch is given to fetch the histories
+           near the tips of all branches. If you want to clone submodules shallowly, also pass
+           --shallow-submodules
