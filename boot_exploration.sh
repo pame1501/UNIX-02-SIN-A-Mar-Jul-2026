@@ -11,3 +11,14 @@ depth = Create a shallow clone with a history truncated to the specified number 
            Implies --single-branch unless --no-single-branch is given to fetch the histories
            near the tips of all branches. If you want to clone submodules shallowly, also pass
            --shallow-submodules
+u = usuario  read
+g = grupo    write
+o = otros    excecute
+- es un archivo
+d es un directorio
+l enlace simbólico
+Change mode # There are two syntax versions: chmod user operator permission file
+chmod +x script.sh   # Adds execute permissions to everyone because no user is specified
+chmod u+x script.sh  # Adds execute permissions to the user
+chmod o-r secret.txt # Removes read permissions from others
+chmod u+rw, go-rwx private # Adds read and write permissions to the user, and removes read, write, and execute permissions from others
