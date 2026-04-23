@@ -26,3 +26,4 @@ sudo chmod +x init # Contains the first process to be executed in the OS
 sudo echo “Hello” > /etc/protected_file # Sudo doesn't work because it only acts on the command immediately following it
 echo “Hello” | sudo tee /etc/protected_file > /dev/null # echo goes to standard output; using | tee gives me the standard output, which in this case is the terminal, and I redirect it to /dev/null
 echo "Hola" | sudo tee /etc/archivo_protegido # displays the file's contents directly in the terminal and creates the file
+sudo sh-c 'echo "chao" >> /etc/archivo_prolegido #Add the line “chao” to the end of a system file securely and with the correct permissions.
