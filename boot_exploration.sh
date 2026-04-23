@@ -44,3 +44,13 @@ ls /etc # Lists the files in /etc
 touch /etc/test.txt # Creates a new file that displays “permission denied” because it lacks execute permission
 mkdir ~/my_folder # Creates a folder named my_folder inside your home directory.
 apt install cowsay # Does not allow me to install cowsay
+r =4
+w=2
+x=1
+rwx = 4 + 2 + 1 = 7 # To assigned all permissions
+-0 = denied all permissions
+touch prueba.txt # Create an empty file named prueba.txt
+chmod 600prueba.txt # 6 (Read+Write) for you; 0 for everyone else.
+ls -l prueba.txt # Check the change.
+chmod 755 prueba.txt # 7 (Full) for you; 5 (Read+Execute) for others.
+ls -l prueba.txt #Check the final change.
