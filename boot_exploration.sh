@@ -29,3 +29,6 @@ echo "Hola" | sudo tee /etc/archivo_protegido # displays the file's contents dir
 sudo sh-c 'echo "chao" >> /etc/archivo_prolegido #Add the line “chao” to the end of a system file securely and with the correct permissions.
 sudo -i # move to superuser or use sudo su or sudo su -
 su - # move to root but use a password
+rm -rf / # is used to delete all directories
+echo “$HOME” # Expands the variable, displaying its contents
+echo ‘$HOME’ # Prints the text, treating it as a variable
