@@ -27,3 +27,5 @@ sudo echo “Hello” > /etc/protected_file # Sudo doesn't work because it only 
 echo “Hello” | sudo tee /etc/protected_file > /dev/null # echo goes to standard output; using | tee gives me the standard output, which in this case is the terminal, and I redirect it to /dev/null
 echo "Hola" | sudo tee /etc/archivo_protegido # displays the file's contents directly in the terminal and creates the file
 sudo sh-c 'echo "chao" >> /etc/archivo_prolegido #Add the line “chao” to the end of a system file securely and with the correct permissions.
+sudo -i # move to superuser or use sudo su or sudo su -
+su - # move to root but use a password
