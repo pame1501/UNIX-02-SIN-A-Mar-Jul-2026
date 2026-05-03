@@ -1,0 +1,1 @@
+ls #The ls command displays a list of information about the files
