@@ -6,3 +6,4 @@ cd # We can use `change directory` to switch directories and navigate the file s
 ls [OPCIONES] [ARCHIVO] # is used to obtain detailed information about files, such as file type, permissions, properties, or timestamps
 ls -lt # The -t option will sort the files by their timestamp
 ls -l -s #The -S (size) option will sort the files by file size
+ls -l -r #Using only the -r option with the list of files in reverse alphabetical order
