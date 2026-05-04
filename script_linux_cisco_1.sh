@@ -11,8 +11,17 @@ Permision commands
 ls -l # >sample
 #-rw-rw-rw-  1 codespace root        230 May  3 03:28 saludo.c
 #The first character of this output indicates the file type.
-# Permits are divided into three groups user/group/others
+# Permits are divided into three groups user(u)/group(g)/others(o) or all (a)
 #A file or directory can have three different permissions: read, write, and execute. 
-# READ : Allows the file's contents to be read or copied.
-# WRITE: Allows you to modify or overwrite the contents of the file. Allows you to add or delete files in a directory.
-# EXECUTE: Allows a file to act as a process, although script files will also require read permission.
+# READ (r): Allows the file's contents to be read or copied.
+# WRITE(w): Allows you to modify or overwrite the contents of the file. Allows you to add or delete files in a directory.
+# EXECUTE(x): Allows a file to act as a process, although script files will also require read permission.
+Change permission commands
+chmod #is used to change the permissions of a file or directory. Only the root user or the file's owner can change a file's permissions.
+chmod meaning #change access mode
+# We can use the chmod command in octal mode and symbolic mode
+Symbolic mode
+# We use this structure chmod [<COJUNTO DE PERMISOS><ACCIÓN><PERMISOS>]... ARCHIVO
+# The actions can be + - or =
+# The permissions are specified after to action symbol
+# example: chmod u+x hello.sh
