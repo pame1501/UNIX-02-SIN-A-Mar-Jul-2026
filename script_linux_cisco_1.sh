@@ -30,3 +30,13 @@ Change the owner of a file (chown command)
 #We use this structure -  chown [OPTIONS] [OWNER] FILE
 # Example:  sudo chown root hello.sh  
 # We use sudo to obtain administrative privileges
+File Viewer
+cat # The `cat` command, which stands for “concatenate,” is often used to quickly view the contents of small files.
+# We use this structure: cat [OPTIONS] [FILE]
+# Using `cat` is not recommended if you need to view long text files, because it does not allow you to view them in sections.
+# Examples of pagination commands include the `more` and `less` commands.
+# Another way to view the contents of files is by using the head and tail commands
+# that are used to view a selected number of lines from the top or bottom of a file
+#These commands have the same structure as `cat`
+# The -n option with the head and tail commands can be used to specify the number of lines to display.
+# head -n number_of_lines file
