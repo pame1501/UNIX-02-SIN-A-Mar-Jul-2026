@@ -25,3 +25,8 @@ Symbolic mode
 # The actions can be + - or =
 # The permissions are specified after to action symbol
 # example: chmod u+x hello.sh
+Change the owner of a file (chown command)
+# The `chown` command allows you to change the owning group, which can be done by the root user or the file's owner.
+#We use this structure -  chown [OPTIONS] [OWNER] FILE
+# Example:  sudo chown root hello.sh  
+# We use sudo to obtain administrative privileges
