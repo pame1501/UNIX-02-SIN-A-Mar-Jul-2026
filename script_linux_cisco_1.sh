@@ -7,3 +7,12 @@ ls [OPCIONES] [ARCHIVO] # is used to obtain detailed information about files, su
 ls -lt # The -t option will sort the files by their timestamp
 ls -l -s #The -S (size) option will sort the files by file size
 ls -l -r #Using only the -r option with the list of files in reverse alphabetical order
+Permision commands
+ls -l # >sample
+#-rw-rw-rw-  1 codespace root        230 May  3 03:28 saludo.c
+#The first character of this output indicates the file type.
+# Permits are divided into three groups user/group/others
+#A file or directory can have three different permissions: read, write, and execute. 
+# READ : Allows the file's contents to be read or copied.
+# WRITE: Allows you to modify or overwrite the contents of the file. Allows you to add or delete files in a directory.
+# EXECUTE: Allows a file to act as a process, although script files will also require read permission.
