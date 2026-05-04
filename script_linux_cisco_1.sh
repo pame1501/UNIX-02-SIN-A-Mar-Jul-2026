@@ -5,3 +5,4 @@ pwd # We use this command to get information about the current working directory
 cd # We can use `change directory` to switch directories and navigate the file system structure.
 ls [OPCIONES] [ARCHIVO] # is used to obtain detailed information about files, such as file type, permissions, properties, or timestamps
 ls -lt # The -t option will sort the files by their timestamp
+ls -l -s #The -S (size) option will sort the files by file size
