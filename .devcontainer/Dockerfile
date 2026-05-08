@@ -221,19 +221,18 @@ RUN git config --system --add safe.directory '*' \
 RUN cat >> /root/.bashrc <<'EOF'
 
 # ===== Prompt del curso =====
-__set_prompt() {
+setopt PROMPT_SUBST
+__set_zsh_prompt() {
     local ec=$?
-    local mark
     if [ $ec -eq 0 ]; then
-        mark='\[\e[32m\]✓\[\e[0m\]'
+        mark='%F{green}✓%f'
     else
-        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
+        mark="%F{red}✗ $ec%f"
     fi
-    PS1="\[\e[36m\][Pamela-Toapanta]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
+    PROMPT="%F{cyan}[Pamela-Toapanta]%f %F{yellow}%1d%f $mark %# "
 }
-PROMPT_COMMAND=__set_prompt
+precmd_functions+=(__set_zsh_prompt)
 EOF
-CMD ["/bin/bash"]
 
 
 
