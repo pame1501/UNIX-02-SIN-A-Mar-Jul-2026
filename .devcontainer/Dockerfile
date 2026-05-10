@@ -217,23 +217,14 @@ RUN git config --system --add safe.directory '*' \
 # Lanza una shell bash interactiva. Codespaces la sobrescribe con su
 # propia terminal integrada de VS Code, pero es buena práctica dejarla
 # definida para que la imagen sea usable también con Docker puro.
+#Cambiar shell de login de root a zsh dentro de la imagen,
+#para que chsh ya no haga falta y todo sea consistente.
+RUN chsh -s /usr/bin/zsh root
 # Prompt del curso para bash
+# Prompt institucional para los y las estudiantes del curso
 RUN cat >> /root/.zshrc <<'EOF'
-
-# ===== Prompt del curso =====
-setopt PROMPT_SUBST
-__set_zsh_prompt() {
-    local ec=$?
-    if [ $ec -eq 0 ]; then
-        mark='%F{green}✓%f'
-    else
-        mark="%F{red}✗ $ec%f"
-    fi
-    PROMPT="%F{cyan}[Pamela-Toapanta]%f %F{yellow}%1d%f $mark %# "
-}
-precmd_functions+=(__set_zsh_prompt)
+# Valida si un comando fue ejecutado correctamente
+PROMPT='%F{cyan} 🍂[Pamela Toapanta]%f %F(yellow)%1-%f %(7.%F{green}✔️.%F{red}❌ %?)%f %#
 EOF
 
-
-
-
+CMD ["/usr/bin/zsh"]
