@@ -10,4 +10,9 @@ touch secret.txt# Creates a file that can only be read and edited by the owner (
 mkdir private: Creates a directory that only the owner can access to view its contents (permissions 700).
 ls -l #Lists the files and folders to verify that the permissions were applied correctly.
 umask 022 #Changes the mask to a standard setting, allowing other users to read but not modify new files.
-
+#Create a file as a normal user
+whoami # Displays the name of the user currently logged in to the system (in the image, it is “alberto”).
+echo “Hola” > mi_archivo # Creates a file named ‘my_file’ and writes the word “Hello” into it.
+ls -l my_file # Lists detailed information about the file to see who owns it and what permissions it has.
+useradd -m -s /usr/bin/zsh luna # Creates a new user named “luna,” assigns them a home directory (-m), and sets the default shell to Zsh (-s).
+chown luna my_file # Changes the file's owner so that it now belongs to “luna” instead of “alberto”.
