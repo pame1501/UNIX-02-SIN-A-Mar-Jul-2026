@@ -27,3 +27,7 @@ ls -l comun # Displays the file details, confirming that although the owner is s
 chown luna: # grupo_test mi_archivo: Simultaneously changes the owner to luna and the group to grupo_test for the specified file.
 ls -l mi_archivo: # Verifies the change; the file now shows luna as the owner and grupo_test as the group with access rights.
 usermod -aG grupo_test $USER: # You attempted to add your current user to the group, but the system displayed the help menu because of a syntax error or missing privileges.
+mkdir -p proyecto/sub: # Creates the directory structure including parent directories if they don't exist; it creates "proyecto" and the "sub" folder inside it simultaneously.
+touch proyecto/readme proyecto/sub/datos: #Creates two empty files at once in different paths: "readme" in the main folder and "datos" inside the subfolder.
+chown -R luna:grupo_test proyecto: #Recursively (-R) changes the owner to luna and the group to grupo_test for the "proyecto" folder and everything inside it.
+ls -lR proyecto: Performs a recursive long listing, showing that every file and subfolder now belongs to luna and grupo_test.
