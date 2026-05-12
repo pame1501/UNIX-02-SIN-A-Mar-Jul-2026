@@ -24,3 +24,6 @@ ls -l comun # Displays the details of the created file, confirming that the owne
  usermod -a -G test_group luna # Adds (-a) the user luna to the supplementary group (-G) named test_group without removing her from her current groups.
 chgrp test_group comun # Changes the group associated with the comun file from the root group to the test_group.
 ls -l comun # Displays the file details, confirming that although the owner is still root, the group with permissions on the file is now test_group.
+chown luna: # grupo_test mi_archivo: Simultaneously changes the owner to luna and the group to grupo_test for the specified file.
+ls -l mi_archivo: # Verifies the change; the file now shows luna as the owner and grupo_test as the group with access rights.
+usermod -aG grupo_test $USER: # You attempted to add your current user to the group, but the system displayed the help menu because of a syntax error or missing privileges.
