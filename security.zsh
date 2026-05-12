@@ -16,3 +16,8 @@ echo “Hola” > mi_archivo # Creates a file named ‘my_file’ and writes the
 ls -l my_file # Lists detailed information about the file to see who owns it and what permissions it has.
 useradd -m -s /usr/bin/zsh luna # Creates a new user named “luna,” assigns them a home directory (-m), and sets the default shell to Zsh (-s).
 chown luna my_file # Changes the file's owner so that it now belongs to “luna” instead of “alberto”.
+groups # Displays the groups to which the current user belongs (in this case, the user belongs only to the root group).
+groupadd test_group #Creates a new group on the system named test_group.
+groups #Run this command again to verify group membership; note that the current user still belongs only to the root group because creating a group does not automatically add you to it.
+touch comun # Creates an empty file named comun in the current directory.
+ls -l comun # Displays the details of the created file, confirming that the owner is root and the associated group is also root.
