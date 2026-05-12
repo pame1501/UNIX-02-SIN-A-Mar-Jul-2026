@@ -21,3 +21,6 @@ groupadd test_group #Creates a new group on the system named test_group.
 groups #Run this command again to verify group membership; note that the current user still belongs only to the root group because creating a group does not automatically add you to it.
 touch comun # Creates an empty file named comun in the current directory.
 ls -l comun # Displays the details of the created file, confirming that the owner is root and the associated group is also root.
+ usermod -a -G test_group luna # Adds (-a) the user luna to the supplementary group (-G) named test_group without removing her from her current groups.
+chgrp test_group comun # Changes the group associated with the comun file from the root group to the test_group.
+ls -l comun # Displays the file details, confirming that although the owner is still root, the group with permissions on the file is now test_group.
