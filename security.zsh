@@ -41,3 +41,15 @@ id -g # Principal group id
 id -G # All group
 
 cat /etc/group | grep root #grep is responsible for filtering based on the adjacent word
+mkdir ~/proyecto_unix/ #Create the “proyecto_unix” directory in the Home folder
+ls -la ~/proyecto_unix/ #list files on proyecto_linux
+
+sudo grupadd desarrolladores # create a simple group
+sudo groupadd -g 2000 opreaciones # Create group with a specific GID
+groupadd --system servicios_web # GID >1000
+
+grep "desarrolladores\|operaciones\|sevicios_web" # Verify creation
+ grep -E "desarrolladores|operaciones|servicios_web" /etc/group
+groupadd --help
+
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs #command to view the range of GIDs on the system
