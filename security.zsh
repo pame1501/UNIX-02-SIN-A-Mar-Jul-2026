@@ -53,3 +53,9 @@ grep "desarrolladores\|operaciones\|sevicios_web" # Verify creation
 groupadd --help
 
 grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs #command to view the range of GIDs on the system
+
+#Create groups with addgroups
+addgroup diseno 
+addgroup --gid 2100 marketing 
+addgroup --system cache_web 
+grep "diseno\|marketing\|cache_web" /etc/group #verify
