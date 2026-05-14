@@ -31,3 +31,5 @@ mkdir -p proyecto/sub: # Creates the directory structure including parent direct
 touch proyecto/readme proyecto/sub/datos: #Creates two empty files at once in different paths: "readme" in the main folder and "datos" inside the subfolder.
 chown -R luna:grupo_test proyecto: #Recursively (-R) changes the owner to luna and the group to grupo_test for the "proyecto" folder and everything inside it.
 ls -lR proyecto: Performs a recursive long listing, showing that every file and subfolder now belongs to luna and grupo_test.
+id # numeric user ID, primary group, secondary groups
+cat/etc/passwd | head -10 # View all system users
