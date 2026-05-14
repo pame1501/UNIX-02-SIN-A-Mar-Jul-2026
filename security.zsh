@@ -39,3 +39,5 @@ groups $USER
 id -u # user ID
 id -g # Principal group id
 id -G # All group
+
+cat /etc/group | grep root #grep is responsible for filtering based on the adjacent word
