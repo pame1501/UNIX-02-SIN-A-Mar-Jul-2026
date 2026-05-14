@@ -59,3 +59,10 @@ addgroup diseno
 addgroup --gid 2100 marketing 
 addgroup --system cache_web 
 grep "diseno\|marketing\|cache_web" /etc/group #verify
+
+ usermod -aG desarrolladores root # Sets "desarrolladores" as the only supplementary group for root, effectively removing root from any other supplementary groups not listed                                                                                                                                 
+ usermod -aG diseno root  # Displays the UID, GID, and all current group memberships for the root user to verify changes.
+usermod -aG grupo_temporal root
+id root
+usermod -G desarrolladores root
+ id root
