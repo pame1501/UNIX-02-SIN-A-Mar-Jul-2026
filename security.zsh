@@ -33,3 +33,9 @@ chown -R luna:grupo_test proyecto: #Recursively (-R) changes the owner to luna a
 ls -lR proyecto: Performs a recursive long listing, showing that every file and subfolder now belongs to luna and grupo_test.
 id # numeric user ID, primary group, secondary groups
 cat/etc/passwd | head -10 # View all system users
+groups # Which group does the current user belong to?
+groups $USER 
+
+id -u # user ID
+id -g # Principal group id
+id -G # All group
