@@ -43,3 +43,10 @@ ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt
 groupadd grupo_restringido
 gpasswd grupo_restringido
 #The system lost a password to the group
+
+# A user who is NOT a member of the group can join temporarily if they know the password
+newgrp grupo_restringido
+# The system will ask for the group password
+# If the password is correct, it is temporarily added
+id-gn
+exit # When you exit, your temporary membership expires
