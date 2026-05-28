@@ -20,3 +20,11 @@ apt-file search /usr/bin/newgrp
 apt install -y util-linux-extra
 newgrp desarrolladores
 id -gn # Verfify
+
+#Create a file within subshell
+touch ~/dentro_de_newgrp.txt
+ls -la ~/dentro_de_newgrp.txt
+# The current group is desarrolladores
+#Create directory
+ mkdir -p ~/proyecto_dev/src
+ ls -la ~/
