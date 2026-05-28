@@ -11,3 +11,12 @@ echo "Grupo actual: $(id -gn)"
 #Create a file before newgrp
 touch ~/antes_de_newgrp.txt
  ls -la ~/antes_de_newgrp.txt
+
+#Install package to newgrp
+apt update
+apt upgrade
+apt install -y apt-file && apt-file update
+apt-file search /usr/bin/newgrp
+apt install -y util-linux-extra
+newgrp desarrolladores
+id -gn # Verfify
