@@ -38,3 +38,8 @@ echo "Grupo restaurado: $(id -gn)"
 
 #Compare both files
 ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt
+
+#Create a group with a password
+groupadd grupo_restringido
+gpasswd grupo_restringido
+#The system lost a password to the group
