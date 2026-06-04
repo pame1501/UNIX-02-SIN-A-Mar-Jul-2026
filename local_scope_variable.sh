@@ -6,5 +6,4 @@ print_name(){
  echo "${name} by ${PUBLISHER}"
 }
 print_name
-echo "Variable ${name} will not be printed because it is a l
-ocal variable."
+echo "Variable ${name} will not be printed because it is a local variable."
