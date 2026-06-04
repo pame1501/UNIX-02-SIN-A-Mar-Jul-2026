@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-set -x
+bash --version
+#set -x
+env
+#set +x
 # Imprimir las variables de entorno del sistema
 echo "${SHELL}"
 echo "${RANDOM}"
@@ -9,4 +12,3 @@ echo "${OSTYPE}"
 # man ls
 #bash -r blackhatbash1.sh
 #bash -x blackhatbash1.sh
-set +x
