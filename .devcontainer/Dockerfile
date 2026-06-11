@@ -275,8 +275,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
 # cambiamos a bash por si agregamos más instrucciones con sintaxis
 # moderna (arrays, [[ ]], etc.).
-SHELL ["/bin/bash", "-c"]
 
+# =========================================================================
+# Block h: Setting the Default Shell for Subsequent RUN Instructions
+# =========================================================================
+# By default, Docker executes instructions using the legacy standard shell 
+# ["/bin/sh", "-c"]. This line overrides that behavior to use Bash instead.
+# Reason: As covered in BHB Ch. 1 & Ch. 2, standard 'sh' lacks support for advanced 
+# features like arrays, specific control operators, and advanced string evaluation. 
+# Explicitly forcing Bash ensures that any subsequent RUN layers can safely 
+# execute complex Bash syntax, conditional flows, and native pipeline features.
+SHELL ["/bin/bash", "-c"]
+# Custom lab shell prompt configuration
+PROMPT="%F{blue}%n@kali-devcontainer%f:%F{yellow}%~%f# "
+EOF
 
 # ----------------------------------------------------------------------------
 # WORKDIR: directorio de trabajo al entrar al contenedor
