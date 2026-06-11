@@ -367,4 +367,12 @@ RUN cat >> /root/.zshrc <<'EOF'
 PROMPT='%F{cyan}[Pamela-Toapanta]%f %F{yellow}%1~%f %{?%F{green}√.%F{red}x %?%}%f %# '
 EOF
 
+# =========================================================================
+# Block m: Default Runtime Execution Command (Image Startup)
+# =========================================================================
+# Specifies the actual executable binary that runs once the container starts up.
+# Reason: It is vital to separate RUN from CMD (BHB Ch. 3). While RUN instructions 
+# execute during the image construction phase to build layers, CMD defines the 
+# entry point when executing 'docker run'. It starts an interactive Zsh process 
+# immediately upon loading so the tester can access the interface.
 CMD ["/usr/bin/zsh"]
