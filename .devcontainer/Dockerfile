@@ -245,7 +245,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # inside the '/etc/locale.gen' configuration file without needing an external text editor 
 # (BHB Ch. 2, "Stream Editing with sed"). By uncommenting the specific Spanish UTF-8 line 
 # and subsequently executing 'locale-gen', the operating system builds and activates 
-# support for Spanish encoding structures, formatting, and character sets.
+# support for Spanish encoding structures, formatting, and character sets. 
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
