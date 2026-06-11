@@ -286,9 +286,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Explicitly forcing Bash ensures that any subsequent RUN layers can safely 
 # execute complex Bash syntax, conditional flows, and native pipeline features.
 SHELL ["/bin/bash", "-c"]
-# Custom lab shell prompt configuration
-PROMPT="%F{blue}%n@kali-devcontainer%f:%F{yellow}%~%f# "
-EOF
+
 
 # ----------------------------------------------------------------------------
 # WORKDIR: directorio de trabajo al entrar al contenedor
