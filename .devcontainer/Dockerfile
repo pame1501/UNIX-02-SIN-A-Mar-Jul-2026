@@ -59,6 +59,15 @@ FROM kalilinux/kali-rolling:latest
 #
 # La barra invertida "\" al final de cada línea significa "esto continúa
 # en la línea siguiente". Solo es para legibilidad.
+#---------------------------------------------------
+#   BLOCK b: EXPLANATION TO ENVIRONMENT
+#---------------------------------------------------
+# Environment variables are loaded into the shell session to alter program 
+# behavior and system configurations (BHB Ch. 1, "Checking Environment Variables").
+# - DEBIAN_FRONTEND=noninteractive avoids build blocks by suppressing prompt questions.
+# - LANG and LC_ALL configure the default system locale, encoding, and character sets.
+# - TERM specifies the type of terminal emulator capabilities to ensure proper color 
+# and layout rendering during interactions.
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
