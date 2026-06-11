@@ -1,0 +1,17 @@
+name: Push Only dev2 to Codeberg
+
+on: [push]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Push only dev2 branch
+        run: |
+          git remote add codeberg https://PameToapanta:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/PameToapanta/unixblackhatbask.git
+          git push codeberg dev2 --force
