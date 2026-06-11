@@ -128,7 +128,26 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 # terminó bien. Si algo falla, el build se detiene con error (que es lo
 # que queremos: mejor un error claro que una imagen rota).
 
-
+# ----------------------------------------------------
+# BLOCK e: Advanced Package Installation and Tooling
+# ----------------------------------------------------
+# This instruction pipelines multiple system updates and security tools inside the container.
+# - 'apt-get update' synchronizes repository metadata, whereas 'apt-get install' fetches the binaries.
+# - The '-y' flag suppresses manual installation confirmations by auto-answering yes.
+# - '--no-install-recommends' keeps the system lightweight by skipping optional dependencies.
+# - Chaining commands with the logical '&&' operator guarantees that subsequent packages only install 
+#   if the preceding command completes successfully without errors (BHB Ch. 2, "Linking Conditions").
+# - The backslash '\' character acts as a line continuation escape to maintain clean syntax formatting (BHB Ch. 1).
+# - Condensing all package activities into a single 'RUN' instruction drastically optimizes image size, 
+#   as it creates only one image layer instead of multiple bulky filesystem snapshots.
+# Essential utilities included for automated auditing, parsing, and pentesting workflows:
+# - gawk, sed, grep: Native stream editors and regex filters used to scrub text outputs (BHB Ch. 2).
+# - shellcheck: A static analysis compiler designed to catch logical syntax bugs in shell scripts.
+# - nmap: A robust infrastructure scanning utility for open port discovery and reconnaissance.
+# - tcpdump, tshark: Command-line sniffer utilities deployed to analyze raw network packet captures.
+# - tor, proxychains4: Privacy wrappers to force shell traffic through anonymous network relays.
+# - jq: A dedicated JSON parser useful when handling script API outputs (BHB Ch. 2).
+# - man-db: Deploys manual pages to locally query documentation via the 'man' command (BHB Ch. 1).
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
     # === Editores de texto y shells (intérpretes de comandos) ===
