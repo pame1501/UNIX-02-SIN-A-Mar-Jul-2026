@@ -253,6 +253,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  # apt deja archivos de caché que ya no necesitamos después de instalar.
  # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
  # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
+
+# =========================================================================
+# Block g: Layer Optimization and Package Cache Cleanup
+# =========================================================================
+# This instruction cleans up downloaded package files and repository lists.
+# 'apt-get clean' removes the accumulated local .deb installers, and
+# 'rm -rf /var/lib/apt/lists/*' deletes the repository index metadata.
+# Reason: According to BHB Ch. 3 (Docker image/layer architecture), every RUN 
+# instruction creates a persistent layer. If we do not clean these temporary 
+# files within the exact same RUN layer where they were created, they will 
+# remain inside the final image structure, causing unnecessary bloat and 
+# increasing the image size.
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
