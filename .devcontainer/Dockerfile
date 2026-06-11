@@ -313,6 +313,16 @@ WORKDIR /workspaces
 # - pull.rebase false: merge por defecto al hacer pull (más intuitivo)
 # - git lfs install --system: registra los hooks de LFS globalmente para
 #   que, si un repo los necesita, funcionen sin sorpresas.
+
+# =========================================================================
+# Block j: System-Wide Git Core and Git LFS Initialization
+# =========================================================================
+# Modifies the core Git settings and initializes Large File Storage (LFS).
+# Using the '--system' flag ensures these settings apply universally to all users
+# on this machine (writing directly to /etc/gitconfig instead of local user space).
+# Reason: 'core.autocrlf input' forces consistent LF line endings inside the 
+# Linux container environment, while 'git lfs' allows proper tracking, retrieval, 
+# and parsing of oversized binary dependencies often used in labs (BHB Ch. 2/3).
 RUN git config --system --add safe.directory '*' \
  && git config --system init.defaultBranch main \
  && git config --system pull.rebase false \
