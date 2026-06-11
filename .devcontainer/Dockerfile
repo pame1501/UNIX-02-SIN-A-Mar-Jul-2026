@@ -336,6 +336,16 @@ RUN git config --system --add safe.directory '*' \
 # definida para que la imagen sea usable también con Docker puro.
 # Cambiar shell de login de root a zsh dentro de la imagen,
 # para que chsh ya no haga falta y todo sea consistente.
+
+# =========================================================================
+# Block k: Changing the Interactive Login Shell for the Root User
+# =========================================================================
+# The 'chsh' utility modifies user parameters in the system database (/etc/passwd). 
+# This command sets the default interactive environment for 'root' to Zsh.
+# Reason: This does not change the build-time layer execution (handled by SHELL),
+# but instead alters the interactive prompt. Modern distributions like Kali Linux 
+# utilize Zsh as their primary user environment (BHB Ch. 3) to provide advanced 
+# autocomplete features and visually informative themes during exploitation tasks.
 RUN chsh -s /usr/bin/zsh root
 
 # Prompt institucional para los y las estudiantes del curso
