@@ -294,6 +294,16 @@ SHELL ["/bin/bash", "-c"]
 # Codespaces siempre monta el código del repositorio en
 # /workspaces/<nombre-del-repo>. Establecer /workspaces aquí hace que las
 # terminales se abran cerca de nuestros archivos del curso.
+
+# =========================================================================
+# Block i: Workspace Context and Directory Initialization
+# =========================================================================
+# This instruction sets the primary absolute path for the container file structure.
+# Any subsequent commands (such as RUN, COPY, or CMD) will run inside this path.
+# If the path does not exist, Docker creates it automatically.
+# Reason: In development container configurations (Devcontainers - BHB Ch. 3), 
+# this acts as the primary mounting point where our local workspace files are 
+# synchronized inside the environment.
 WORKDIR /workspaces
 
 # Configuración de Git para el contenedor:
