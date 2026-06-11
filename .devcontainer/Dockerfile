@@ -37,6 +37,8 @@
 FROM kalilinux/kali-rolling:latest
 
 
+
+
 # ----------------------------------------------------------------------------
 # ENV: variables de entorno permanentes dentro del contenedor
 # ----------------------------------------------------------------------------
@@ -59,15 +61,28 @@ FROM kalilinux/kali-rolling:latest
 #
 # La barra invertida "\" al final de cada línea significa "esto continúa
 # en la línea siguiente". Solo es para legibilidad.
+
 #---------------------------------------------------
-#   BLOCK b: EXPLANATION TO ENVIRONMENT
+#   BLOCK b: Docker Layers, Image & Cache Concept
+#---------------------------------------------------
+# Docker images are built incrementally using a read-only layered filesystem 
+# architecture where each instruction generates a distinct layer. Docker 
+# implements a caching mechanism to reuse unmodified layers from previous builds. 
+# The sequential order of instructions is critical; modifying an early instruction 
+# invalidates its cache and forces all subsequent layers to rebuild from scratch.
+
+#---------------------------------------------------
+#   BLOCK c: EXPLANATION TO ENVIRONMENT
 #---------------------------------------------------
 # Environment variables are loaded into the shell session to alter program 
 # behavior and system configurations (BHB Ch. 1, "Checking Environment Variables").
-# - DEBIAN_FRONTEND=noninteractive avoids build blocks by suppressing prompt questions.
-# - LANG and LC_ALL configure the default system locale, encoding, and character sets.
-# - TERM specifies the type of terminal emulator capabilities to ensure proper color 
-# and layout rendering during interactions.
+#  DEBIAN_FRONTEND=noninteractive avoids build blocks by suppressing prompt questions.
+#  LANG and LC_ALL configure the default system locale, encoding, and character sets.
+#  TERM specifies the type of terminal emulator capabilities to ensure proper color.
+# In Docker's layered architecture, changing ENV variables creates a new layer. 
+# Because Docker uses a sequential caching mechanism, instructions are ordered 
+# with ENV variables near the top so that subsequent RUN instructions can leverage 
+# these settings without accidentally invalidating the image cache during rebuilds.
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
