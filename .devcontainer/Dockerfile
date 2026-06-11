@@ -23,6 +23,17 @@
 # En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
 # en su versión "rolling" (actualización continua, siempre al día).
 # Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+#---------------------------------------------------
+#   BLOCK a: EXPLANATION TO BASE IMAGE
+#---------------------------------------------------
+# This instruction defines the base image for our development container. 
+# Kali Linux is selected because it is a Debian-based distribution pre-packaged 
+# with specialized tools, libraries, and dependencies essential for penetration 
+# testing and security auditing (BHB Ch. 3, "Installing Kali").
+# Docker images are built using a layered architecture, where each instruction 
+# creates a new read-only layer. The execution order is critical because Docker 
+# uses a layer caching system; if an early layer changes, all subsequent caches 
+# are invalidated, making logical ordering essential for quick builds.
 FROM kalilinux/kali-rolling:latest
 
 
