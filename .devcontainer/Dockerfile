@@ -349,9 +349,21 @@ RUN git config --system --add safe.directory '*' \
 RUN chsh -s /usr/bin/zsh root
 
 # Prompt institucional para los y las estudiantes del curso
+
+# =========================================================================
+# Block l: Terminal Prompt Customization using a Here-Document (Heredoc)
+# =========================================================================
+# This block passes multi-line string contents directly into a configuration file.
+# The '<<' operator tells the shell to accept input streams until the 'EOF' 
+# delimiter is read, and '>>' appends the contents without destroying the 
+# existing destination file data (Streams and Redirection - BHB Ch.1).
+# Reason: It modifies the Zsh configuration file (~/.zshrc) to inject a custom 
+# 'PROMPT' environment variable, tailoring the command line visual layout 
+# (username, hostname, and active path colors) for the analyst workspace.
 RUN cat >> /root/.zshrc <<'EOF'
 
 # ===== Valida si un comando fue ejecutado correctamente =====
+# Custom lab shell prompt configuration
 PROMPT='%F{cyan}[Pamela-Toapanta]%f %F{yellow}%1~%f %{?%F{green}√.%F{red}x %?%}%f %# '
 EOF
 
