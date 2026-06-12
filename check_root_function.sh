@@ -22,3 +22,11 @@ else
     # This block executes if the function returns 1
     echo "User is not root!"
 fi
+# Create a new user named 'luna' 
+#useradd luna 
+# Switch to the user 'luna' (su: substitute user). 
+# The dash (-) initiates a login shell, loading the user's environment.
+su - luna
+
+# Execute the script.
+bash check_root_function.sh
