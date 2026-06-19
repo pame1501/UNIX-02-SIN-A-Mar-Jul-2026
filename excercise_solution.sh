@@ -28,3 +28,6 @@ else
   # If the ping fails, append 'failure' and details to the CSV file
   echo "failure,${NAME},${DOMAIN},$(date)" >> "${OUTPUT_FILE}"
 fi
+
+nohup ./excercise_solution.sh miweb google.com
+ps -ef | grep "[e]xcercise_solution.sh"
