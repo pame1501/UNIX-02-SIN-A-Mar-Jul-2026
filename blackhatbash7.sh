@@ -33,4 +33,17 @@ sed 's/Mozilla/Godzilla/g' log.txt
 grep "Godzilla" log.txt
 grep "Mozilla" log.txt
 sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
-grep "Mozilla" newlog.txt
+grep "Godzilla" newlog.txt
+grep "Mozilla" log.txt
+
+sed '1d' newlog.txt
+sed -i '1d' newlog.txt
+git diff newlog.txt
+diff log.txt newlog.txt
+
+sed -i '$d' newlog.txt
+git diff newlog.txt
+git diff newlog.txt
+sed 's/ //g' newlog.txt
+sed 's/ //g' newlog.txt > newlog1.txt
+sed '8,10d' newlog.txt
