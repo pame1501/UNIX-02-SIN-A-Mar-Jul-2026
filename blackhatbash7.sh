@@ -53,3 +53,8 @@ sed -n '10,15 p' log.txt
 sleep 300 &
 jobs
 fg %1
+sleep 300 &
+jobs
+fg %1 ctrl+z
+bg %2
+
